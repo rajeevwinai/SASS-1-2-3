@@ -1,0 +1,275 @@
+body {
+    font-family: sans-serif;
+    background-color: $background-color;  
+}
+
+h3 {
+    margin-top: 40px;
+}
+
+.header P {
+    color: $p-color;
+    margin-top: 40px;
+    font-size: 1.5em;
+    padding: 10px;
+}
+
+a:link {
+    color: lightgray;
+    text-decoration: none;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 300px;
+    height: 500px;
+    border-radius: 5%;
+
+}
+
+.header {
+    background: #fff;
+    height: 400px;
+    border-radius: 5%;
+    text-align: center;
+}
+
+.footer {
+    width: 300px;
+    height: 130px;
+    position: absolute;
+    bottom: 0;
+    background: #686de0;
+    color: #fff;
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+    text-align: center;
+
+    img {
+        height: 40px;
+        width: 40px;
+        border: 5px solid white;
+        border-radius: 90%;
+        position: absolute;
+        bottom: 100px;
+        right: 125px;
+        
+    }
+}
+
+// EXERCISE 2 //
+
+.container {
+    display: grid;
+    grid-template-rows: repeat(1,1fr);
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+    
+    img {
+        height: 400px;
+        width: 400px;
+        border-radius: 5%;
+    }
+
+    .overlay-fade {
+        position: relative;
+        box-sizing: border-box;
+        height: 400px;
+        width: 400px;
+        overflow: hidden;
+        float: left;
+        margin: 10px;
+
+    &:hover div {
+        opacity: 1;
+        transition: all 0.5s ease-in;
+        border-radius: 5%;
+        }
+
+    div {
+        position: absolute;
+        box-sizing: border-box;
+        top: 0;
+        background-color: rgba(44, 43, 43, 0.575);
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: all 0.2s ease-in;
+        }
+
+    a {
+         box-sizing: border-box;
+         text-decoration: none;
+         display: block;
+         color: #faf9f9d0;
+         background-color: #636363ab;
+         text-align: center;
+         margin: auto;
+         left: 0;
+         right: 0;
+         top: 0;
+         bottom: 0;
+         width: 130px;
+         height: 50px;
+         line-height: 50px;
+         position: absolute;
+         font-size: 12px;
+         font-weight: bold;
+        }
+    }
+}
+
+// MEDIA QUERIES //
+
+@media (min-width:700px) {
+    .container {
+        display: grid;
+        grid-template-rows: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);      
+    }
+}   
+
+@media (min-width:1053px) {
+    .container {
+        display: grid;
+        grid-template-rows: repeat(3,1fr);
+        grid-template-columns: repeat(3, 1fr);       
+    }
+}
+
+
+// EXERCISE 3 //
+.mediabuttons {
+    // position: absolute;
+    // top: 265%;
+    // left: 93%;
+    position: fixed;
+    right: 0;
+    bottom: 100px;
+    
+
+
+    p {
+        margin: 0;
+        padding: 0;
+        color: #fff;
+    
+    }
+
+    ul li {
+        position: relative;
+        list-style: none;
+        height: 50px;
+        width: 50px;        
+
+        .fa-solid, .fa-brands {
+            position: absolute;
+            top: 25%;
+            left: 25%;
+            font-size: 1.5em;
+
+        }
+
+    }
+
+    .blog {
+        background-color: #e17b77;
+        
+        &:hover {
+            transform: translateX(-180px);
+            transition: all 1s ease;
+           }
+    }
+
+    .twitter {
+        background-color: #00aced;
+        &:hover {
+            transform: translateX(-180px);
+            transition: all 1s ease;
+           }    
+    }
+
+    .linkedin {
+        background-color: #007bb6;
+        &:hover {
+            transform: translateX(-180px);
+            transition: all 1s ease;
+           }
+    }
+
+    .facebook {
+        background-color: #3b5998;
+        &:hover {
+            transform: translateX(-180px);
+            transition: all 1s ease;
+           }
+    }
+
+    .github {
+        background-color: #333;
+        &:hover {
+            transform: translateX(-180px);
+            transition: all 1s ease;
+           }
+    }
+
+    .slider {
+        position: absolute;
+        top: 0;
+        width: 0;
+        left: 51px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        transition: all 0.5s ease;
+        
+
+        p {
+            font-size: 16px;
+            font-weight: 900;
+            transition: all 0.5s ease;
+            opacity: 0;
+
+        }
+    }
+
+
+}
+
+
+ul li.blog div.slider {
+    background-color: #e17b77 ;
+    
+}
+
+ul li.twitter div.slider {
+    background-color: #00aced ;
+}
+
+ul li.linkedin div.slider {
+    background-color: #007bb6 ;
+}
+
+ul li.facebook div.slider {
+    background-color: #3b5998 ;
+}
+
+ul li.github div.slider {
+    background-color: #333 ;
+}
+
+ul li:hover .slider {
+    width: 180px;
+    transition: all 0,5s ease;
+    
+}
+
+ul li:hover .slider p {
+    opacity: 1;
+    
+}
+
+
+
